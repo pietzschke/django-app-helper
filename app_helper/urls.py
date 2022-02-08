@@ -15,7 +15,7 @@ urlpatterns = [
     re_path(r"^jsi18n/(?P<packages>\S+?)/$", JavaScriptCatalog.as_view()),  # NOQA
 ]
 i18n_urls = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
 ]
 
 try:
