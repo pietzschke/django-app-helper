@@ -152,7 +152,7 @@ def _make_settings(args, application, settings, STATIC_ROOT, MEDIA_ROOT):  # NOQ
             extra_settings_file = HELPER_FILE
         if extra_settings_file[-3:] != ".py":  # pragma: no cover
             filename, __ = os.path.splitext(extra_settings_file)
-            extra_settings_file = "{}.py".format(filename)
+            extra_settings_file = f"{filename}.py"
         extra_settings = load_from_file(extra_settings_file).HELPER_SETTINGS
     except (OSError, AttributeError):
         extra_settings = None
@@ -348,8 +348,8 @@ def create_user(
 def get_user_model_labels():
     User = get_user_model()  # NOQA
 
-    user_orm_label = "{}.{}".format(User._meta.app_label, User._meta.object_name)
-    user_model_label = "{}.{}".format(User._meta.app_label, User._meta.model_name)
+    user_orm_label = f"{User._meta.app_label}.{User._meta.object_name}"
+    user_model_label = f"{User._meta.app_label}.{User._meta.model_name}"
     return user_orm_label, user_model_label
 
 
