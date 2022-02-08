@@ -18,6 +18,8 @@ jobs:
             python-version: 3.7
           - django: 40
             cms: cms37
+          - django: 32
+            cms: cms37
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
