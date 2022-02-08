@@ -522,7 +522,7 @@ class CMSPageRenderingMixin(RequestTestCaseMixin):
         edit_on = get_cms_setting("CMS_TOOLBAR_URL__EDIT_ON")
         path = path or page and page.get_absolute_url(lang)
         if edit:
-            path = "{}?{}".format(path, edit_on)
+            path = f"{path}?{edit_on}"
 
         request = RequestFactory().get(path, secure=secure)
         return self._prepare_request(request, page, user, lang, use_middlewares, use_toolbar=True, secure=secure)

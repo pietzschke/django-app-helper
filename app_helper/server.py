@@ -43,7 +43,7 @@ def _init_runserver(runserver_module, bind, port, verbose, logger=None, channels
     autoreload.run_with_reloader(
         rs.inner_run,
         **{
-            "addrport": "{}:{}".format(bind, port),
+            "addrport": f"{bind}:{port}",
             "insecure_serving": True,
             "use_static_handler": True,
             "use_threading": True,
