@@ -262,11 +262,11 @@ def _make_settings(args, application, settings, STATIC_ROOT, MEDIA_ROOT):  # NOQ
     if application not in default_settings["INSTALLED_APPS"]:
         default_settings["INSTALLED_APPS"].append(application)
 
-    if "SECRET_KEY" not in default_settings:
-        default_settings["SECRET_KEY"] = "test"
-
     if not migrate:
         default_settings["MIGRATION_MODULES"] = DisableMigrations()
+
+    if "SECRET_KEY" not in default_settings:
+        default_settings["SECRET_KEY"] = "test"
 
     if "MIDDLEWARE" not in default_settings:
         default_settings["MIDDLEWARE"] = default_settings["MIDDLEWARE_CLASSES"]
